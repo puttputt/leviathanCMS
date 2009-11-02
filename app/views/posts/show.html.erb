@@ -4,6 +4,8 @@
 
 <p><%= @post.body %></p>
 
+<p>Tagged under: <%= @post.tag_list %></p>
+
 <%= render :partial => 'comments/newcomment' %>
 
 <div id="comments">

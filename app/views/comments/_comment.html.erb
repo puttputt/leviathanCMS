@@ -1,10 +1,14 @@
 <div id="comment">
-	
-  <p>
-  	<%= comment.content %>
-	<%= render :partial => 'comments/replycomment', :locals => {:parent => comment.id} %>
-  	<blockquote><%= render :partial => 'comments/comment', :collection => comment.children %></blockquote>
-</p>
-	
 
+	<div class="comment-user">
+	</div>
+  	<div class="comment-content">
+  		<%= comment.content %>
+  	</div>
+  	<div class="comment-menu">
+		<%= render :partial => 'comments/replycomment', :locals => {:parent => comment.id} %>
+  	</div>
+  	<blockquote>
+		<%= render :partial => 'comments/comment', :collection => comment.children %>
+	</blockquote>
 </div>
