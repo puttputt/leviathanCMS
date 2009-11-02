@@ -1,0 +1,10 @@
+<div id="comment-box">
+	<%= error_messages_for :comment %>
+	<% form_for :comment, :url => { :controller => "comments", :action => "create", :id => @post.id, :parent_id => parent } do |f| -%>
+	<p><label for="comment">Comment</label><br/>
+	<%= f.text_field :content %></p>
+	
+	<p><%= submit_tag 'Comment' %></p>
+	<% end -%>
+
+</div>

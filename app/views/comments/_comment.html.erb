@@ -1,0 +1,10 @@
+<div id="comment">
+	
+  <p>
+  	<%= comment.content %>
+	<%= render :partial => 'comments/replycomment', :locals => {:parent => comment.id} %>
+  	<blockquote><%= render :partial => 'comments/comment', :collection => comment.children %></blockquote>
+</p>
+	
+
+</div>
