@@ -9,7 +9,9 @@
 <%= render :partial => 'comments/newcomment' %>
 
 <div id="comments">
-<% for comment in @comments%>
-  <%= render :partial => 'comments/comment', :object => comment %>
+<% for comment in @comments %>
+	<% if comment.parent_id == nil %>
+  		<%= render :partial => 'comments/comment', :object => comment %>
+	<%- end -%>
 <%- end -%>
 </div>

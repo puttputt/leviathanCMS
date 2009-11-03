@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:id]
     @comment.parent_id = params[:parent_id]
     if @comment.save
-      #redirect_to :controller => "ads", :action => "show", :id=> @comment.ad_id
+      redirect_to :controller => "posts", :action => "show", :id=> @comment.post_id
     else
       #redirect_to :action => "new"
     end
