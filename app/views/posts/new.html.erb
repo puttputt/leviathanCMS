@@ -3,6 +3,16 @@
 <p><label for="Title">Title</label><br/>
 <%= f.text_field :title %></p>
 
+<p><label for="Category">Category</label><br/>
+<% if(@category) %>
+	<%= @category.name %>
+	<%= f.hidden_field :category_id, :value => @category.id  %>
+<% else %>
+	<%= select :post, :category_id, @categories.map{|u| [u.name,u.id]} %>
+<% end %>
+</p>
+
+
 <p><label for="Body">Body</label><br/>
  <%= f.tinymce :body %></p>
 

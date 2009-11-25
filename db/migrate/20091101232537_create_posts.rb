@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration
       t.column :updated_at,                :datetime
       t.column :category_id, :integer
       t.column :user_id, :integer
+      t.column :comment_total, :integer, :null => :no, :default => 0
     end
   end
 

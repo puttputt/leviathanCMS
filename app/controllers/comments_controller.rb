@@ -12,7 +12,12 @@ class CommentsController < ApplicationController
     @comment.user_id = session[:user]
     @comment.post_id = params[:id]
     @comment.parent_id = params[:parent_id]
+    @post = Post.find_by_id(@comment.post_id)
+    @post.comment_total = @post.comment_total + 1
+    @comment.post_comment_id = @post.comment_total
+    
     if @comment.save
+      @post.save
       redirect_to :controller => "posts", :action => "show", :id=> @comment.post_id
     else
       #redirect_to :action => "new"

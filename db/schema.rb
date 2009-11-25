@@ -13,6 +13,9 @@ ActiveRecord::Schema.define(:version => 20091102221618) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
+    t.text     "description"
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,18 +25,22 @@ ActiveRecord::Schema.define(:version => 20091102221618) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "post_id"
+    t.integer  "post_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
-    t.string   "body"
-    t.string   "state",      :default => "draft"
+    t.text     "body"
+    t.string   "state",         :default => "draft"
     t.datetime "published"
-    t.integer  "page",       :default => 0
+    t.integer  "page",          :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.integer  "comment_total", :default => 0
   end
 
   create_table "taggings", :force => true do |t|
@@ -62,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20091102221618) do
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
     t.string   "state",                                   :default => "passive"
+    t.string   "role",                                    :default => "Reader"
     t.datetime "deleted_at"
   end
 

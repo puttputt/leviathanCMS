@@ -1,0 +1,10 @@
+<%= error_messages_for :post %>
+<table>
+	<% for cat in @Cat %>
+		<tr>
+			<td><%= cat.name %></td>
+			<td><%= cat.slug %></td>
+			<td><%= cat.description %></td>
+		</tr>
+	<%- end -%>
+<table>

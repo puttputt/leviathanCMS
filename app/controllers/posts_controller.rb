@@ -3,28 +3,19 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.find :all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @posts }
-    end
+    @categories = Category.all
   end
 
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-    end
   end
 
   def new
     @post = Post.new
-        
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @post }
+    @categories = Category.all
+    if(params[:id])
+      @category = Category.find_by_id(params[:id])
     end
   end
 
@@ -35,15 +26,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
 
-    respond_to do |format|
-      if @post.save
-        flash[:notice] = 'Post was successfully created.'
-        format.html { redirect_to(@post) }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to :action => "show", :id => @post.id
+    else
+      render :action => "new"
     end
   end
 
