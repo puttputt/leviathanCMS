@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  layout 'standard'
+  layout 'default'
   
   def index
-    @posts = Post.find :all
+    @posts = Post.find(:all, :limit => 5)
     @categories = Category.all
   end
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091102221618) do
+ActiveRecord::Schema.define(:version => 20091127023737) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(:version => 20091102221618) do
     t.datetime "updated_at"
   end
 
+  create_table "menu_lists", :force => true do |t|
+    t.string   "name"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.integer  "number"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -41,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20091102221618) do
     t.integer  "category_id"
     t.integer  "user_id"
     t.integer  "comment_total", :default => 0
+  end
+
+  create_table "settings", :force => true do |t|
+    t.string   "site_name"
+    t.string   "site_tagline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|

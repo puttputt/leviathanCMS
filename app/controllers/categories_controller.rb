@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout 'default'
   def index
     @Cat = Category.find :all
   end

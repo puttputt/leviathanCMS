@@ -1,0 +1,12 @@
+<div class="login-header">
+<%- form_tag session_path do -%>
+<p><label for="login">Login</label><%= text_field_tag 'login' %>
+<label for="password">Password</label><%= password_field_tag 'password' %>
+
+<label for="remember_me">Remember</label>
+<%= check_box_tag 'remember_me' %>
+
+<%= submit_tag 'Log in', :class => 'button', :value=> 'Go' %>
+<%= link_to 'Register', new_user_path %></p>
+<%- end -%>
+</div>

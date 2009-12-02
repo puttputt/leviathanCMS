@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>LeviathanCMS</title>	
+	<%= init_tinymce_hammer_if_required %>
+	<%= stylesheet_link_tag "style" %>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="mini-menu">
+			<%= render :partial => 'layouts/login' %>
+		</div>
+		<div class="clear">
+		</div>
+		<div class="header">
+			<h1><%= link_to 'LeviathanCMS', root_path %></h1>
+		</div>
+		
+		<div class="main">
+			<%= yield %>
+		</div>
+		
+		<div class="sidebar">
+			<%= render :partial => 'layouts/menu' %>
+		</div>
+		<div class="clear">
+		</div>
+		<div class="mini-menu">
+			<%= render :partial => 'layouts/menu' %>
+		</div>
+		<div class="footer">
+			<p>Powered by LeviathanCMS</p>
+		</div>		
+	</div>
+</body>
+</html>

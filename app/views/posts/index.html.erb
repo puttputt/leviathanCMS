@@ -1,10 +1,7 @@
 <%= error_messages_for :post %>
-<table>
-	<% for cat in @Cat %>
-		<tr>
-			<td><%= cat.name %></td>
-			<td><%= cat.slug %></td>
-			<td><%= cat.description %></td>
-		</tr>
+
+	<% for post in @posts %>
+		<h2><%= post.title %></h2>
+		<%=post.body%>
 	<%- end -%>
-<table>
+
