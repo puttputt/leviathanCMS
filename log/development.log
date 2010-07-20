@@ -38164,3 +38164,298 @@ ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
   -e:1
 
 Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-20 17:16:26) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-20 17:16:30) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-20 17:16:32) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-20 17:16:37) [GET]
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" LIMIT 5[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering posts/index
+Rendered layouts/_login (1.6ms)
+  [4;35;1mMenulist Load Including Associations (0.4ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (9.1ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 35ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:16:42) [GET]
+
+ActionView::MissingTemplate (Missing template admin/index.erb in view path app/views:vendor/plugins/tinymce_hammer/app/views):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:16:46) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: menus.position: SELECT * FROM "categories" ORDER BY menus.position ASC[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: menus.position: SELECT * FROM "categories"  ORDER BY menus.position ASC):
+  app/controllers/admin_controller.rb:16:in `category'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:17:13) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/admin/_menuindex.html.erb:
+1: <p>
+2: <table>
+3: <% for m in @index %>
+4: 	<tr>
+5: 		<td><%= m.name %></td><td></td>
+6: 		<td><%= link_to 'Edit', edit_menulist_path(m) %></td>
+
+    app/views/admin/_menuindex.html.erb:3
+    app/views/admin/category.html.erb:2
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (55.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:17:54) [GET]
+  [4;35;1mCategory Load (0.7ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+Rendered categories/_new (2.6ms)
+Rendered layouts/_login (1.4ms)
+  [4;36;1mMenulist Load Including Associations (0.3ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (8.9ms)
+Rendered layouts/_menuhorizontal (0.2ms)
+Completed in 30ms (View: 24, DB: 1) | 200 OK [http://localhost/admin/category]
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:20:12) [GET]
+  [4;35;1mCategory Load (4.5ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+Rendered categories/_new (2.4ms)
+Rendered layouts/_login (1.6ms)
+  [4;36;1mMenulist Load Including Associations (0.4ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (13.2ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 53ms (View: 40, DB: 5) | 200 OK [http://localhost/admin/category]
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:20:13) [GET]
+  [4;35;1mCategory Load (0.7ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+Rendered categories/_new (2.9ms)
+Rendered layouts/_login (2.4ms)
+  [4;36;1mMenulist Load Including Associations (0.4ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (55.3ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 74ms (View: 66, DB: 1) | 200 OK [http://localhost/admin/category]
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:20:33) [GET]
+  [4;35;1mCategory Load (0.7ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/admin/_catindex.html.erb:
+1: <p>
+2: <table>
+3: <% for m in @index %>
+4: 	<tr>
+5: 		<td><%= m.name %></td><td></td>
+6: 		<td><%= link_to 'Edit', edit_menulist_path(m) %></td>
+
+    app/views/admin/_catindex.html.erb:3
+    app/views/admin/category.html.erb:2
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (156.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:21:32) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+Rendered admin/_catindex (5.5ms)
+Rendered categories/_new (1.7ms)
+Rendered layouts/_login (1.4ms)
+  [4;35;1mMenulist Load Including Associations (0.4ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (9.3ms)
+Rendered layouts/_menuhorizontal (0.2ms)
+Completed in 32ms (View: 25, DB: 1) | 200 OK [http://localhost/admin/category]
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-07-20 17:21:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template categories/edit.erb in view path app/views:vendor/plugins/tinymce_hammer/app/views):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:25:59) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+
+ActionView::TemplateError (undefined local variable or method `category' for #<ActionView::Base:0x1031dd2e8>) on line #1 of app/views/admin/index.html.erb:
+1: <%= link_to "Categories", category %> 
+
+    app/views/admin/index.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (159.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:26:10) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+
+ActionView::TemplateError (category_url failed to generate from {:controller=>"categories", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["categories", :id] - are they all satisfied?) on line #1 of app/views/admin/index.html.erb:
+1: <%= link_to "Categories", category_path %> 
+
+    (eval):17:in `category_path'
+    app/views/admin/index.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:26:37) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+Rendered layouts/_login (2.1ms)
+  [4;35;1mMenulist Load Including Associations (0.3ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (11.2ms)
+Rendered layouts/_menuhorizontal (0.2ms)
+Completed in 24ms (View: 21, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#category (for 127.0.0.1 at 2010-07-20 17:26:39) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering admin/category
+Rendered admin/_catindex (5.0ms)
+Rendered categories/_new (1.9ms)
+Rendered layouts/_login (1.5ms)
+  [4;35;1mMenulist Load Including Associations (0.4ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (9.5ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 71ms (View: 63, DB: 1) | 200 OK [http://localhost/admin/category]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:27:13) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+Rendered layouts/_login (2.0ms)
+  [4;36;1mMenulist Load Including Associations (0.3ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (10.0ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 24ms (View: 21, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-07-20 17:27:15) [GET]
+  [4;35;1mMenu Load (0.7ms)[0m   [0mSELECT * FROM "menus" [0m
+  [4;36;1mMenulist Load (0.2ms)[0m   [0;1mSELECT * FROM "menulists" [0m
+  [4;35;1mMenulist Load Including Associations (0.3ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendering template within layouts/default
+Rendering admin/menu
+Rendered admin/_menuindex (8.3ms)
+Rendered menulists/_new (1.8ms)
+Rendered menus/_new (2.1ms)
+Rendered layouts/_login (1.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (2.0ms)
+Rendered layouts/_menuhorizontal (0.2ms)
+Completed in 55ms (View: 45, DB: 1) | 200 OK [http://localhost/admin/menu]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:27:31) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+Rendered layouts/_login (88.1ms)
+  [4;35;1mMenulist Load Including Associations (0.5ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (12.7ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 110ms (View: 107, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-20 17:27:46) [GET]
+Rendering template within layouts/default
+Rendering admin/index
+Rendered layouts/_login (1.7ms)
+  [4;36;1mMenulist Load Including Associations (0.4ms)[0m   [0;1mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (10.7ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-20 17:27:47) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-20 17:27:52) [GET]
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" LIMIT 5[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/default
+Rendering posts/index
+Rendered layouts/_login (1.8ms)
+  [4;35;1mMenulist Load Including Associations (0.4ms)[0m   [0mSELECT "menulists"."id" AS t0_r0, "menulists"."name" AS t0_r1, "menulists"."position" AS t0_r2, "menulists"."created_at" AS t0_r3, "menulists"."updated_at" AS t0_r4, "menus"."id" AS t1_r0, "menus"."name" AS t1_r1, "menus"."path" AS t1_r2, "menus"."position" AS t1_r3, "menus"."menulist_id" AS t1_r4, "menus"."created_at" AS t1_r5, "menus"."updated_at" AS t1_r6 FROM "menulists" LEFT OUTER JOIN "menus" ON menus.menulist_id = menulists.id ORDER BY menus.position ASC[0m
+Rendered layouts/_menu (12.3ms)
+Rendered layouts/_menuhorizontal (0.3ms)
+Completed in 68ms (View: 54, DB: 1) | 200 OK [http://localhost/]

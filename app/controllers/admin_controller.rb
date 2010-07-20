@@ -10,4 +10,8 @@ class AdminController < ApplicationController
     #@index = Menu.all(:order => 'position ASC', :include => 'menulist')
     @index = Menulist.all(:order => 'menus.position ASC', :include => 'menus')
   end
+
+  def category
+    @cat = Category.all
+  end
 end

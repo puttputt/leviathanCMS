@@ -1,0 +1,12 @@
+<p>
+<table>
+<% for m in @cat %>
+	<tr>
+		<td><%= m.name %></td><td></td>
+		<td><%= link_to 'Edit', edit_category_path(m) %></td>
+		<td><%= link_to 'Delete', category_path(m), :method=>'delete', :confirm=>'Are you sure? All child menu items will be deleted as well.' %></td>
+	</tr>
+
+<% end %>
+</table>
+</p>
