@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(:version => 20091127023737) do
     t.datetime "updated_at"
   end
 
-  create_table "menu_lists", :force => true do |t|
+  create_table "menulists", :force => true do |t|
     t.string   "name"
-    t.integer  "menu_id"
+    t.integer  "position",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20091127023737) do
   create_table "menus", :force => true do |t|
     t.string   "name"
     t.string   "path"
-    t.integer  "number"
-    t.integer  "position"
+    t.integer  "position",    :default => 0
+    t.integer  "menulist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

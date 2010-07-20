@@ -1,3 +1,3 @@
 class Menu < ActiveRecord::Base
-  has_one :menu_list
+  belongs_to :menulist
 end

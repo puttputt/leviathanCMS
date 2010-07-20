@@ -1,5 +1,4 @@
 <% for m in Menulist.all_for_menu %>
-		<h3><%= m.name %></h3>
 		<ul>	
 		<% for j in m.menus %>
 				<li><%= link_to j.name, j.path %></li>

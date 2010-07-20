@@ -1,0 +1,2 @@
+module MenulistsHelper
+end

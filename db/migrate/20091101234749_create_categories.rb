@@ -4,7 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.column :name, :string
       t.column :slug, :string
       t.column :description, :text
-      t.column :parent_id, :integers
+      t.column :parent_id, :integer
       t.timestamps
     end
   end

@@ -1,0 +1,20 @@
+<p>
+<table>
+<% for m in @index %>
+	<tr>
+		<td><%= m.name %></td><td></td>
+		<td><%= link_to 'Edit', edit_menulist_path(m) %></td>
+		<td><%= link_to 'Delete', menulist_path(m), :method=>'delete', :confirm=>'Are you sure? All child menu items will be deleted as well.' %></td>
+	</tr>
+			
+		<% for j in m.menus %>
+			<tr>
+				<td></td>
+				<td><%= j.name %></td>
+				<td><%= link_to 'Edit', edit_menu_path(j) %></td>
+				<td><%= link_to 'Delete', menu_path(j), :method=>'delete', :confirm=>'Are you sure?' %></td>
+			</tr>
+		<% end %>
+<% end %>
+</table>
+</p>

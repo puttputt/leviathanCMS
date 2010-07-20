@@ -1,14 +1,8 @@
-<%= error_messages_for :menu_list %>
-<% form_for :menu_list, :url => menu_list_path do |f| -%>
-<p><label for="Name">Name</label><br/>
-<%= f.text_field :name %></p>
+<h1>Menu Index</h1>
+<%= render :partial => 'admin/menuindex' %>
 
-<p><label for="slug">Slug</label><br/>
- <%= f.text_field :slug %></p>
+<h1>Menu Lists</h1>
+<%= render :partial => 'menulists/new' %>
 
-<p><label for="description">Description</label><br/>
-<%= f.text_area :description %></p>
-
-
-<p><%= submit_tag 'Save' %></p>
-<% end -%>
+<h1>Menu Items</h1>
+<%= render :partial => 'menus/new' %>
