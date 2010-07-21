@@ -1,0 +1,11 @@
+<h2><%= link_to "Back", :controller => "admin", :action=>"menu" %></h2>
+<% form_for @menulist, :url => menulists_path do |f| -%>
+<p><label for="Name">Name</label><br/>
+<%= f.text_field :name %></p>
+
+<p><label for="Position">Position</label><br/>
+<%= f.text_field :position %></p>
+
+
+<p><%= submit_tag 'Save' %></p>
+<% end -%>

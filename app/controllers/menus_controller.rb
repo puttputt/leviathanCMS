@@ -12,6 +12,7 @@ class MenusController < ApplicationController
   
   def edit
     @menu = Menu.find(params[:id])
+    @menulist = Menulist.all
   end
   
   def update

@@ -2,7 +2,7 @@
 		<h3><%= m.name %></h3>
 		<ul>	
 		<% for j in m.menus %>
-				<li><%= link_to j.name, j.path %></li>
+				<li><%= link_to j.name, "/" + j.path %></li>
 		<% end %>
 		</ul>
 <% end %>
